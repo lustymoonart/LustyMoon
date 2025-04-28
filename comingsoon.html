@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Coming Soon</title>
+  <style>
+    /* Reset */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body, html {
+      height: 100%;
+      font-family: 'Poppins', sans-serif;
+      overflow: hidden;
+      position: relative;
+      background: linear-gradient(135deg, #2c003e, #4b007d);
+      color: #e0b3ff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+    }
+    h1 {
+      font-size: 4rem;
+      margin-bottom: 30px;
+      z-index: 1;
+      text-shadow: 0 0 20px #e0b3ff;
+      letter-spacing: 2px;
+    }
+    a.back-button {
+      text-decoration: none;
+      color: #e0b3ff;
+      border: 2px solid #e0b3ff;
+      padding: 12px 24px;
+      border-radius: 30px;
+      transition: background 0.4s, color 0.4s;
+      font-weight: bold;
+      z-index: 1;
+    }
+    a.back-button:hover {
+      background: #e0b3ff;
+      color: #2c003e;
+    }
+    .particles {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 0;
+    }
+    .particle {
+      position: absolute;
+      width: 5px;
+      height: 5px;
+      background: rgba(224, 179, 255, 0.8);
+      border-radius: 50%;
+      animation: move 12s linear infinite;
+      box-shadow: 0 0 8px rgba(224, 179, 255, 0.7);
+    }
+    @keyframes move {
+      0% { transform: translateY(0) translateX(0); opacity: 1; }
+      100% { transform: translateY(-120vh) translateX(40vw); opacity: 0; }
+    }
+  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="particles" id="particles"></div>
+
+<h1>Coming Soon</h1>
+<a href="index.html" class="back-button">Back</a>
+
+<!-- Áudio de fundo -->
+<audio id="background-audio" src="Arquivos/Audios/luxury.mp3" autoplay loop></audio>
+
+<script>
+  // Gerador de partículas
+  const particlesContainer = document.getElementById('particles');
+  const numberOfParticles = 70;
+
+  for (let i = 0; i < numberOfParticles; i++) {
+    const particle = document.createElement('div');
+    particle.classList.add('particle');
+    particle.style.top = Math.random() * 100 + '%';
+    particle.style.left = Math.random() * 100 + '%';
+    particle.style.animationDuration = (8 + Math.random() * 8) + 's';
+    particle.style.opacity = Math.random();
+    particle.style.width = particle.style.height = (2 + Math.random() * 4) + 'px';
+    particlesContainer.appendChild(particle);
+  }
+
+  // Corrigir possíveis bloqueios de autoplay em navegadores
+  document.addEventListener('click', () => {
+    const audio = document.getElementById('background-audio');
+    if (audio.paused) {
+      audio.play();
+    }
+  });
+</script>
+
+</body>
+</html>
+
