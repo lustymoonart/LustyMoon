@@ -5,6 +5,7 @@ const uploads = [
   { type: 'video', src: 'uploads/video1.mp4' },
   { type: 'image', src: 'uploads/img2.jpg' },
   { type: 'video', src: 'uploads/video2.mp4' },
+  { type: 'image', src: 'uploads/img3.jpg' },
 ];
 
 const gallery = document.getElementById('gallery');
