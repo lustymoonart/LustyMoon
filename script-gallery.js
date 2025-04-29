@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", function() {
     { type: 'image', src: 'Arquivos/Images/gallery/image1.jpg', alt: 'Artwork 1' },
     { type: 'image', src: 'Arquivos/Images/gallery/image2.jpg', alt: 'Artwork 2' },
     { type: 'image', src: 'Arquivos/Images/gallery/image3.jpg', alt: 'Artwork 3' },
+    { type: 'image', src: 'Arquivos/Images/gallery/image4.jpg', alt: 'Artwork 4' },
     { type: 'video', src: 'Arquivos/Images/gallery/video1.mp4' },
     { type: 'video', src: 'Arquivos/Images/gallery/video2.mp4' }
   ];
